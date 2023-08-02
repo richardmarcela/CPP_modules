@@ -1,9 +1,9 @@
 CC = c++
-NAME = phonebook
+NAME = account
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
 
-SRCS = src/Contact.cpp src/PhoneBook.cpp src/main.cpp
+SRCS = src/Account.cpp tests.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
