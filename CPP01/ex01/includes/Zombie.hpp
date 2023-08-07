@@ -4,19 +4,18 @@
 #include <cstdlib>
 
 using std::cout;
-using std::string;
 using std::endl;
 
 class Zombie {
-    string _name;
+    std::string _name;
 
     public:
-        string getName();
-        void setName(string name);
+        std::string getName();
+        void setName(std::string name);
         void announce(int i);
-        Zombie(string name);
+        Zombie(std::string name);
         Zombie();
         ~Zombie();
 };
 
-Zombie* zombieHorde(int N, string name);
+Zombie* zombieHorde(int N, std::string name);

@@ -1,19 +1,22 @@
-#pragma once
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
 #include <iostream> // cout, endl
 
 using std::cout;
-using std::string;
 using std::endl;
 
 
 class Zombie {
-    string _name;
+    std::string _name;
 
     public:
-        string getName();
+        std::string getName();
         void announce(void);
-        Zombie(string name);
+        Zombie(std::string name);
 };
 
-Zombie *newZombie(string name);
-void randomChump(string name);
+Zombie *newZombie(std::string name);
+void randomChump(std::string name);
+
+#endif

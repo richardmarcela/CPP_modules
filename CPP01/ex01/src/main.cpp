@@ -6,5 +6,4 @@ int main(void) {
     for (int i = 0; i < 10; i++)
         zombies[i].announce(i);
     delete [] zombies;
-    return EXIT_SUCCESS;
-}
+}src/Zombie.cpp src/zombieHorde.cpp
