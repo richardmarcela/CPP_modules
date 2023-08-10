@@ -8,7 +8,7 @@ using std::endl;
 
 
 class Zombie {
-    std::string _name;
+    std::string name;
 
     public:
         std::string getName();

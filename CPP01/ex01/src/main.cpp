@@ -6,4 +6,4 @@ int main(void) {
     for (int i = 0; i < 10; i++)
         zombies[i].announce(i);
     delete [] zombies;
-}src/Zombie.cpp src/zombieHorde.cpp
+}
