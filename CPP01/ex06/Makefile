@@ -1,9 +1,9 @@
 CC = c++
-NAME = replace
+NAME = harlFilter
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -fsanitize=address
 RM = rm -rf
 
-SRCS = main.cpp
+SRCS = src/main.cpp src/Harl.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -24,6 +24,6 @@ fclean: clean
 re: fclean all
 
 run: all clean
-	./$(NAME) test.txt "alo" "testando"
+	./$(NAME)
 
 .PHONY: all clean fclean re run	
