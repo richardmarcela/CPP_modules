@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <cstdlib>
+# include <cmath>
 
 using std::cout;
 using std::endl;
@@ -16,8 +17,8 @@ class Fixed
 	public:
 		// Constructors
 		Fixed(void);
+		//Copy constructor 
 		Fixed(const Fixed &copy);
-		//Fixed(int number);
 		Fixed(const int value);
 		Fixed(const float value);
 		
@@ -28,12 +29,14 @@ class Fixed
 		Fixed & operator=(const Fixed &assign);
 		
 		// Getters / Setters
-		int getNumber(void) const;
-		void setNumber(int number);
 		int getRawBits(void) const;
 		void setRawBits(int const bits);
+
+		//Methods
 		float toFloat(void) const;
 		int toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream& os, const Fixed& fp);
 
 #endif
