@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 
 // Constructors
-Fixed::Fixed(void) {
+Fixed::Fixed() {
 	this->number = 0;
 }
 
@@ -18,7 +18,7 @@ Fixed::Fixed(const float value) {
 }
 
 // Destructor
-Fixed::~Fixed(void) {}
+Fixed::~Fixed() {}
 
 // Operators
 Fixed &Fixed::operator=(const Fixed &assign) {
@@ -131,10 +131,6 @@ const Fixed &Fixed::max(const Fixed &number, const Fixed &secondNumber) {
 	if (number.getRawBits() > secondNumber.getRawBits())
 		return number;
 	return secondNumber;
-}
-
-bool Fixed::bsp(Point const a, Point const b, Point const c, Point const point) {
-	
 }
 
 std::ostream &operator<<(std::ostream& os, const Fixed& fp) {

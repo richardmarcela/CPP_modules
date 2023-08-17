@@ -1,7 +1,6 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-# include "Point.hpp"
 # include <iostream>
 # include <string>
 # include <cstdlib>
@@ -58,7 +57,6 @@ class Fixed
 		static const Fixed &min(const Fixed &number, const Fixed &secondNumber);
 		static Fixed &max(Fixed &number, Fixed &secondNumber);
 		static const Fixed &max(const Fixed &number, const Fixed &secondNumber);
-		bool bsp(Point const a, Point const b, Point const c, Point const point);
 };
 
 std::ostream &operator<<(std::ostream& os, const Fixed& fp);
