@@ -109,32 +109,20 @@ float Fixed::toFloat(void) const {
 	return (float)this->number / (float)(1 << Fixed::bits);
 }
 
-Fixed &Fixed::min(Fixed &number, Fixed &secondNumber) {
-	if (number.getRawBits() < secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+	return a.getRawBits() < b.getRawBits() ? a : b;
 }
 
-const Fixed &Fixed::min(const Fixed &number, const Fixed &secondNumber) {
-	if (number.getRawBits() < secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+	return a.getRawBits() < b.getRawBits() ? a : b;
 }
 
-Fixed &Fixed::max(Fixed &number, Fixed &secondNumber) {
-	if (number.getRawBits() > secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
+	return a.getRawBits() > b.getRawBits() ? a : b;
 }
 
-const Fixed &Fixed::max(const Fixed &number, const Fixed &secondNumber) {
-	if (number.getRawBits() > secondNumber.getRawBits())
-		return number;
-	return secondNumber;
-}
-
-bool Fixed::bsp(Point const a, Point const b, Point const c, Point const point) {
-	
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
+	return a.getRawBits() > b.getRawBits() ? a : b;
 }
 
 std::ostream &operator<<(std::ostream& os, const Fixed& fp) {

@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 
 // Constructors
-Fixed::Fixed() {
+Fixed::Fixed(void) {
 	this->number = 0;
 }
 
@@ -18,7 +18,7 @@ Fixed::Fixed(const float value) {
 }
 
 // Destructor
-Fixed::~Fixed() {}
+Fixed::~Fixed(void) {}
 
 // Operators
 Fixed &Fixed::operator=(const Fixed &assign) {
@@ -109,31 +109,23 @@ float Fixed::toFloat(void) const {
 	return (float)this->number / (float)(1 << Fixed::bits);
 }
 
-Fixed &Fixed::min(Fixed &number, Fixed &secondNumber) {
-	if (number.getRawBits() < secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+	return a.getRawBits() < b.getRawBits() ? a : b;
 }
 
-const Fixed &Fixed::min(const Fixed &number, const Fixed &secondNumber) {
-	if (number.getRawBits() < secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+	return a.getRawBits() < b.getRawBits() ? a : b;
 }
 
-Fixed &Fixed::max(Fixed &number, Fixed &secondNumber) {
-	if (number.getRawBits() > secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
+	return a.getRawBits() > b.getRawBits() ? a : b;
 }
 
-const Fixed &Fixed::max(const Fixed &number, const Fixed &secondNumber) {
-	if (number.getRawBits() > secondNumber.getRawBits())
-		return number;
-	return secondNumber;
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
+	return a.getRawBits() > b.getRawBits() ? a : b;
 }
 
-std::ostream &operator<<(std::ostream& os, const Fixed& fp) {
+std::ostream &operator<<(std::ostream &os, const Fixed &fp) {
     os << fp.toFloat();
     return os;
 }
