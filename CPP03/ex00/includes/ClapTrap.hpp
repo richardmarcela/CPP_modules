@@ -32,7 +32,10 @@ class ClapTrap
 		void setEnergyPoints(int energyPoints);
 		int getAttackDamage() const;
 		void setAttackDamage(int attackDamage);
-		
+
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 
 #endif
