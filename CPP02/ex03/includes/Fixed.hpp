@@ -28,12 +28,12 @@ class Fixed
 		// Operators
 		Fixed &operator=(const Fixed &assign);
 		
-		bool operator>(const Fixed &assign) const;
-		bool operator<(const Fixed &assign) const;
-		bool operator>=(const Fixed &assign) const;
-		bool operator<=(const Fixed &assign) const;
-		bool operator==(const Fixed &assign) const;
-		bool operator!=(const Fixed &assign) const;
+		bool operator>(const Fixed &assign);
+		bool operator<(const Fixed &assign);
+		bool operator>=(const Fixed &assign);
+		bool operator<=(const Fixed &assign);
+		bool operator==(const Fixed &assign);
+		bool operator!=(const Fixed &assign);
 
 		Fixed operator+(const Fixed &assign);
 		Fixed operator-(const Fixed &assign);
@@ -49,7 +49,7 @@ class Fixed
 		int getRawBits(void) const;
 		void setRawBits(int const bits);
 
-		//Methodsconst
+		//Methods
 		float toFloat(void) const;
 		int toInt(void) const;
 

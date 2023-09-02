@@ -11,7 +11,7 @@ class Point {
     public:
         Point(void);
         ~Point(void);
-        Point(const Fixed x, const Fixed y);
+        Point(const float x, const float y);
         Point(const Point &copy);
         Point &operator=(const Point &assign);
         Fixed getX(void) const ;

@@ -13,7 +13,7 @@ static Fixed area(const Point a, const Point b, const Point c) {
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
-    return (area(a, b, c) == area(point, b, c) + area(a, point, c) + area(a, b, point));
+    return (area(a, b, c) == area(point, b, c) + area(a, point, b) + area(a, c, point));
 }
 
 /* abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);

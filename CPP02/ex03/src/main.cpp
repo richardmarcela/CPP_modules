@@ -1,8 +1,9 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-int main( void ) {
-    //inside
+int main(void)
+{
+	//inside
 
 	bool result = bsp(Point(0, 0), Point(10, 30), Point(20, 0), Point(10, 15));
 	if (result)

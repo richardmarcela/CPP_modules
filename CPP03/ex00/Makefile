@@ -1,30 +1,30 @@
 CC = c++
-NAME = fixedNumber
+NAME = ClapTrap
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
 
 SRCS = src/ClapTrap.cpp src/main.cpp
 
-OBJS = ${SRCS:.cpp=.o}
+OBJS = $(SRCS:.cpp=.o)
 
-all: ${NAME}
+all: $(NAME)
 	clear
 
-${NAME} : ${OBJS}
-        $(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-        ${CC} ${CFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-        $(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-        $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
 run: all clean
-        ./$(NAME)
+	./$(NAME)
 
 .PHONY: all clean fclean re run

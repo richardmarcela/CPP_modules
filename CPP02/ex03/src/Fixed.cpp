@@ -10,7 +10,7 @@ Fixed::Fixed(const Fixed &copy) {
 }
 
 Fixed::Fixed(const int value) {
-	this->number = value * (1 << Fixed::bits);
+	this->number = value << this->bits;
 }
 
 Fixed::Fixed(const float value) {
@@ -22,31 +22,32 @@ Fixed::~Fixed(void) {}
 
 // Operators
 Fixed &Fixed::operator=(const Fixed &assign) {
-	this->number = assign.getRawBits();
+	if (this != &assign)
+		this->number = assign.getRawBits();
 	return *this;
 }
 
-bool Fixed::operator>(const Fixed &assign) const {
+bool Fixed::operator>(const Fixed &assign) {
 	return this->number > assign.getRawBits();
 }
 
-bool Fixed::operator<(const Fixed &assign) const {
+bool Fixed::operator<(const Fixed &assign) {
 	return this->number < assign.getRawBits();
 }
 
-bool Fixed::operator>=(const Fixed &assign) const {
+bool Fixed::operator>=(const Fixed &assign) {
 	return this->number >= assign.getRawBits();
 }
 
-bool Fixed::operator<=(const Fixed &assign) const {
+bool Fixed::operator<=(const Fixed &assign) {
 	return this->number <= assign.getRawBits();
 }
 
-bool Fixed::operator==(const Fixed &assign) const {
+bool Fixed::operator==(const Fixed &assign) {
 	return this->number == assign.getRawBits();
 }
 
-bool Fixed::operator!=(const Fixed &assign) const {
+bool Fixed::operator!=(const Fixed &assign) {
 	return this->number != assign.getRawBits();
 }
 
@@ -126,6 +127,5 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fp) {
-    os << fp.toFloat();
-    return os;
+    return os << fp.toFloat();
 }

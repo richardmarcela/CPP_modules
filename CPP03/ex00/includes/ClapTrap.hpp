@@ -4,18 +4,20 @@
 # include <iostream>
 # include <string>
 
+using std::cout;
+using std::endl;
+
 class ClapTrap
 {
-	std::string _name;
-	int _hitPoints;
-	int _energyPoints;
-	int _attackDamage;
+	std::string name;
+	unsigned int hitPoints;
+	unsigned int energyPoints;
+	unsigned int attackDamage;
 
 	public:
 		// Constructors
-		ClapTrap();
+		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
-		ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
 		
 		// Destructor
 		~ClapTrap();
@@ -23,16 +25,6 @@ class ClapTrap
 		// Operators
 		ClapTrap & operator=(const ClapTrap &assign);
 		
-		// Getters / Setters
-		std::string getName() const;
-		void setName(std::string name);
-		int getHitPoints() const;
-		void setHitPoints(int hitPoints);
-		int getEnergyPoints() const;
-		void setEnergyPoints(int energyPoints);
-		int getAttackDamage() const;
-		void setAttackDamage(int attackDamage);
-
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
