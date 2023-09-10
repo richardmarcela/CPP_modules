@@ -4,21 +4,22 @@
 ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
-	hitPoints = 100;
-	energyPoints = 50;
-	attackDamage = 20;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+	std::cout << "\e[0;33mDefault Constructor called of ClapTrap\e[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	*this = copy;
-	cout << "\e[0;33mCopy Constructor called of ClapTrap\e[0m" << endl;
+	std::cout << "\e[0;33mCopy Constructor called of ClapTrap\e[0m" << std::endl;
 }
 
 // Destructor
 ClapTrap::~ClapTrap()
 {
-	cout << "\e[0;31mDestructor called of ClapTrap\e[0m" << endl;
+	std::cout << "\e[0;31mDestructor called of ClapTrap\e[0m" << std::endl;
 }
 
 // Operators
@@ -38,7 +39,7 @@ void ClapTrap::attack(const std::string &target)
 		cout << "ClapTrap " << this->name << " is out of energy!" << endl;
 		return ;
 	} 
-	cout << "ClapTrap " << this->name << " attacks " << target << ", " << "causing " << this->attackDamage << " points of damage!" << endl;
+	cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << endl;
 	this->energyPoints--;
 }
 
