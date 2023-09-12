@@ -1,10 +1,11 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-    ScavTrap Junior("Junior");
-    ScavTrap Leonice("Leonice");
+    FragTrap Junior("Junior");
+    FragTrap Leonice("Leonice");
 
     cout << endl;
 
@@ -32,7 +33,7 @@ int main(void)
 
 	cout << endl;
 
-	Junior.guardGate();
+	Junior.highFivesGuys();
 
 	cout << endl;
 }
