@@ -1,13 +1,22 @@
 #include "ClapTrap.hpp"
 
 // Constructors
+ClapTrap::ClapTrap(void)
+{
+	this->name = name;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	cout << "\e[0;33mDefault Constructor called of ClapTrap\e[0m" << endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
-	hitPoints = 10;
-	energyPoints = 10;
-	attackDamage = 0;
-	cout << "\e[0;33mDefault Constructor called of ClapTrap\e[0m" << endl;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	cout << "\e[0;33mFields Constructor called of ClapTrap\e[0m" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
@@ -25,10 +34,10 @@ ClapTrap::~ClapTrap(void)
 // Operators
 ClapTrap & ClapTrap::operator=(const ClapTrap &assign)
 {
-	name = assign.name;
-	hitPoints = assign.hitPoints;
-	energyPoints = assign.energyPoints;
-	attackDamage = assign.attackDamage;
+	this->name = assign.name;
+	this->hitPoints = assign.hitPoints;
+	this->energyPoints = assign.energyPoints;
+	this->attackDamage = assign.attackDamage;
 	return *this;
 }
 

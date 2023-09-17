@@ -16,6 +16,7 @@ class ClapTrap
 
 	public:
 		// Constructors
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
 		
@@ -23,7 +24,7 @@ class ClapTrap
 		~ClapTrap();
 		
 		// Operators
-		ClapTrap & operator=(const ClapTrap &assign);
+		ClapTrap& operator=(const ClapTrap &assign);
 		
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

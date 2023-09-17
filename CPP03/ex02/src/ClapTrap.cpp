@@ -1,34 +1,43 @@
 #include "ClapTrap.hpp"
 
 // Constructors
+ClapTrap::ClapTrap(void) 
+{
+	this->name = "";
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+	cout << "\e[0;33mDefault Constructor called of ClapTrap\e[0m" << endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
-	std::cout << "\e[0;33mDefault Constructor called of ClapTrap\e[0m" << std::endl;
+	cout << "\e[0;33mFields Constructor called of ClapTrap\e[0m" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	*this = copy;
-	std::cout << "\e[0;33mCopy Constructor called of ClapTrap\e[0m" << std::endl;
+	cout << "\e[0;33mCopy Constructor called of ClapTrap\e[0m" << endl;
 }
 
 // Destructor
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "\e[0;31mDestructor called of ClapTrap\e[0m" << std::endl;
+	cout << "\e[0;31mDestructor called of ClapTrap\e[0m" << endl;
 }
 
 // Operators
 ClapTrap & ClapTrap::operator=(const ClapTrap &assign)
 {
-	name = assign.name;
-	hitPoints = assign.hitPoints;
-	energyPoints = assign.energyPoints;
-	attackDamage = assign.attackDamage;
+	this->name = assign.name;
+	this->hitPoints = assign.hitPoints;
+	this->energyPoints = assign.energyPoints;
+	this->attackDamage = assign.attackDamage;
 	return *this;
 }
 

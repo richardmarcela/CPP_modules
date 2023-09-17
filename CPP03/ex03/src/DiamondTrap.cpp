@@ -1,7 +1,8 @@
 # include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name) {
-    this->name = name;
+DiamondTrap::DiamondTrap(void) 
+{
+    this->name = "nameless";
     ClapTrap::name = name + "_clap_name";
     this->hitPoints = FragTrap::hitPoints;
     this->energyPoints = ScavTrap::energyPoints;
@@ -10,8 +11,34 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), Fra
 	cout << "\e[0;33mDefault Constructor called of DiamondTrap\e[0m" << endl;
 }
 
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name) {
+    this->name = name;
+    ClapTrap::name = name + "_clap_name";
+    this->hitPoints = FragTrap::hitPoints;
+    this->energyPoints = ScavTrap::energyPoints;
+    this->attackDamage = FragTrap::attackDamage;
+
+	cout << "\e[0;33mFields Constructor called of DiamondTrap\e[0m" << endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &copy)
+{
+    *this = copy;
+    cout << "\e[0;33mCopy Constructor called of ClapTrap\e[0m" << endl;
+}
+
 DiamondTrap::~DiamondTrap(void) {
     cout << "\e[0;31mDestructor called of DiamondTrap\e[0m" << endl;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &assign)
+{
+    this->name = assign.name;
+    this->ClapTrap::name = assign.ClapTrap::name;
+	this->hitPoints = assign.hitPoints;
+	this->energyPoints = assign.energyPoints;
+	this->attackDamage = assign.attackDamage;
+	return *this;
 }
 
 void DiamondTrap::whoAmI(void) {
