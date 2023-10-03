@@ -24,7 +24,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), Fra
 DiamondTrap::DiamondTrap(const DiamondTrap &copy)
 {
     *this = copy;
-    cout << "\e[0;33mCopy Constructor called of ClapTrap\e[0m" << endl;
+    cout << "\e[0;33mCopy Constructor called of DiamondTrap\e[0m" << endl;
 }
 
 DiamondTrap::~DiamondTrap(void) {
