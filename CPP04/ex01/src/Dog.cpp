@@ -3,6 +3,7 @@
 Dog::Dog(void) : Animal()
 {
     this->type = "Dog";
+    this->brain = new Brain();
     cout << "\e[0;33mDefault Constructor called of Dog\e[0m" << endl;
 }
 
@@ -14,6 +15,7 @@ Dog::Dog(const Dog &copy)
 
 Dog::~Dog(void)
 {
+    delete this->brain;
     cout << "\e[0;31mDestructor called of Dog\e[0m" << endl;
 }
 

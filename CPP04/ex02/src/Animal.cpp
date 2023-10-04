@@ -27,8 +27,3 @@ std::string Animal::getType(void) const
 {
     return this->type;
 }
-
-void Animal::makeSound(void) const
-{
-    cout << "Nameless makes an unrecognized sound!" << endl;
-}

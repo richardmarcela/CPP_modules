@@ -1,10 +1,10 @@
 CC = c++
-NAME = Polymorphism
+NAME = brainnn
 CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -I./includes
 RM = rm -rf
 
 SRCS = src/Animal.cpp src/Dog.cpp src/Cat.cpp src/main.cpp src/WrongAnimal.cpp \
-		src/WrongCat.cpp
+		src/WrongCat.cpp src/Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
