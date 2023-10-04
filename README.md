@@ -1,4 +1,5 @@
 # CPP_modules
 
 - arrumar ultimo do cpp02
-- estudar virtual
+- construtor parametizado
+- copy no CPP04 ex01??
