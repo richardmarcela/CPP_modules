@@ -8,7 +8,6 @@ AMateria::AMateria(void)
 
 AMateria::AMateria(std::string const &type) : type(type)
 {
-    //this->type = type;
     cout << "\e[0;33mCopy Constructor called of AMateria\e[0m" << endl;
 }
 
@@ -28,12 +27,7 @@ std::string const &AMateria::getType(void) const
     return this->type;
 }
 
-AMateria *AMateria::clone(void) const 
-{
-    
-}
-
 void AMateria::use(ICharacter &target)
 {
-    cout << "AMateria use called" << endl;
+    (void)target;
 }
