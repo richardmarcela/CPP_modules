@@ -1,12 +1,14 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
+class AMateria;
 #include "ICharacter.hpp"
-#include "Ice.hpp"
 #include <iostream>
 
 using std::cout;
 using std::endl;
+
+class ICharacter;
 
 class AMateria
 {
@@ -16,7 +18,7 @@ class AMateria
     public:
         AMateria(void);
         AMateria(std::string const &type);
-        ~AMateria(void);
+        virtual ~AMateria(void);
 
         AMateria &operator=(const AMateria &assign);
 

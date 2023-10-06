@@ -15,7 +15,7 @@ Character::Character(std::string name)
 }
 
 Character::Character(const Character &copy) 
-: name(copy.getName()), equipped(0) 
+: equipped(0), name(copy.getName())
 {
     for (int i = 0; i < copy.equipped; i++)
         this->equip(copy.materias[i]->clone());
