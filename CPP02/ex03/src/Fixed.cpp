@@ -3,22 +3,22 @@
 // Constructors
 Fixed::Fixed(void) {
 	this->number = 0;
-	//cout << "aaaaaaaaa" << endl;
+	//cout << number << endl;
+}
+
+Fixed::Fixed(const int value) {
+	this->number = value * (1 << this->bits);
+	//cout << "int: " << this->number << endl;
+}
+
+Fixed::Fixed(const float value) {
+	this->number = roundf(value * (1 << this->bits));
+	//cout << "float: " << this->number << endl;
 }
 
 Fixed::Fixed(const Fixed &copy) {
 	*this = copy;
-	//cout << "b" << endl;
-}
-
-Fixed::Fixed(const int value) {
-	this->number = value << this->bits;
-	//cout << "c" << endl;
-}
-
-Fixed::Fixed(const float value) {
-	this->number = roundf(value * (1 << Fixed::bits));
-	//cout << "d" << endl;
+	//cout << copy.getRawBits() << endl;
 }
 
 // Destructor
@@ -26,8 +26,7 @@ Fixed::~Fixed(void) {}
 
 // Operators
 Fixed &Fixed::operator=(const Fixed &assign) {
-	if (this != &assign)
-		this->number = assign.getRawBits();
+	this->setRawBits(assign.getRawBits());
 	return *this;
 }
 
@@ -107,11 +106,11 @@ void Fixed::setRawBits(int const bits) {
 }
 
 int Fixed::toInt(void) const {
-	return this->number >> Fixed::bits;
+	return this->number >> this->bits;
 }
 
 float Fixed::toFloat(void) const {
-	return (float)this->number / (float)(1 << Fixed::bits);
+	return (float)this->number / (float)(1 << this->bits);
 }
 
 Fixed &Fixed::min(Fixed &a, Fixed &b) {
@@ -130,6 +129,6 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
 	return a.getRawBits() > b.getRawBits() ? a : b;
 }
 
-std::ostream &operator<<(std::ostream &os, const Fixed &fp) {
+std::ostream &operator<<(std::ostream &os, Fixed const &fp) {
     return os << fp.toFloat();
 }

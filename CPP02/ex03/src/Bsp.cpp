@@ -7,7 +7,10 @@ static Fixed abs(Fixed x) {
 }
 
 static Fixed area(const Point a, const Point b, const Point c) {
-    return abs((a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY()) + c.getX() * (a.getY() - b.getY())) / 2);
+    return abs(((a.getX() * (b.getY() - c.getY())) +
+				(b.getX() * (c.getY() - a.getY())) +
+				(c.getX() * (a.getY() - b.getY()))) /
+			   2);
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {

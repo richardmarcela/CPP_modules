@@ -10,9 +10,10 @@ class Point {
 
     public:
         Point(void);
-        ~Point(void);
         Point(const float x, const float y);
         Point(const Point &copy);
+        ~Point(void);
+        
         Point &operator=(const Point &assign);
         Fixed getX(void) const ;
         Fixed getY(void) const ;

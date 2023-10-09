@@ -8,7 +8,7 @@ Brain::Brain(void)
 Brain::Brain(const Brain &copy)
 {
     *this = copy;
-    cout << "\e[0;33mCopy Constructor called of Animal\e[0m" << endl;
+    cout << "\e[0;33mCopy Constructor called of Brain\e[0m" << endl;
 }
 
 Brain::~Brain(void) 
