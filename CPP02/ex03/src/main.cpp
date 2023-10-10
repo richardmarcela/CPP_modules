@@ -11,7 +11,7 @@ int main(void)
 		cout << "Point outside of the triangle" << endl;
 
 	//outside
-	result = bsp(Point(0, 0), Point(10, 30), Point(20, 0), Point(30, 15));
+	result = bsp(Point(0, 0), Point(10, 30), Point(20, 0), Point(0, 100));
 	if (result)
 		cout << "Point inside of the triangle" << endl;
 	else

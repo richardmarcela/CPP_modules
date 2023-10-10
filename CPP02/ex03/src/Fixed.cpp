@@ -3,22 +3,18 @@
 // Constructors
 Fixed::Fixed(void) {
 	this->number = 0;
-	//cout << number << endl;
 }
 
 Fixed::Fixed(const int value) {
-	this->number = value * (1 << this->bits);
-	//cout << "int: " << this->number << endl;
+	this->number = value << Fixed::bits;
 }
 
 Fixed::Fixed(const float value) {
-	this->number = roundf(value * (1 << this->bits));
-	//cout << "float: " << this->number << endl;
+	this->number = roundf(value * (1 << Fixed::bits));
 }
 
 Fixed::Fixed(const Fixed &copy) {
 	*this = copy;
-	//cout << copy.getRawBits() << endl;
 }
 
 // Destructor
