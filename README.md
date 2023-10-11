@@ -1,5 +1,4 @@
 # CPP_modules
 
-- arrumar ultimo do cpp02
-- construtor parametizado
+- darkest secret CPP00 ex01
 - copy no CPP04 ex01??
