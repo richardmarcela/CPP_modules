@@ -6,6 +6,7 @@
 
 using std::cout;
 using std::endl;
+using std::cerr;
 
 class Harl {
     void debug(void);

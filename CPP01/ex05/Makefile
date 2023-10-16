@@ -1,5 +1,5 @@
 CC = c++
-NAME = harl2.0
+NAME = harlFilter
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -fsanitize=address
 RM = rm -rf
 

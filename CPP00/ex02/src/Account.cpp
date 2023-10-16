@@ -18,7 +18,7 @@ int Account::_totalNbWithdrawals = 0;
 Account::Account() {};
 
 /* Construtor */
-Account::Account (int initial_deposit){
+Account::Account (int initial_deposit) {
     _accountIndex = _nbAccounts;
     _amount = initial_deposit;
     _displayTimestamp();
@@ -92,7 +92,7 @@ void Account::_displayTimestamp(void) {
 
     /* tempo atual em segundos desde o epoch */
     std::time(&result);
-    /* transforma em ano, mes... */
+    /* transforma em [YYYYMMDD_HHMMSS] */
     time_stamp = localtime(&result);
     cout << "[";
     cout << time_stamp->tm_year + 1900;

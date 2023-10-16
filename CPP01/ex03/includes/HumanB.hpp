@@ -8,8 +8,8 @@ using std::cout;
 using std::endl;
 
 class HumanB {
-    Weapon *weapon;
     std::string name;
+    Weapon *weapon; //can be created without a weapon
 
     public:
         HumanB(std::string name);

@@ -9,7 +9,7 @@ using std::endl;
 
 class HumanA {
     std::string name;
-    Weapon &weapon;
+    Weapon &weapon; //need to be provided everytime a humanA is created
 
     public:
         HumanA(std::string name, Weapon &weapon);

@@ -23,9 +23,17 @@ void PhoneBook::addContact()
     getline(cin, input);
     contacts[index].setLastName(input);
 
+    cout << "Nickname: ";
+    getline(cin, input);
+    contacts[index].setNickname(input);
+
     cout << "Phone Number: ";
     getline(cin, input);
     contacts[index].setPhoneNumber(input);
+
+    cout << "Darkest Secret: ";
+    getline(cin, input);
+    contacts[index].setDarkestSecret(input);
 
     this->index += 1;
 
@@ -50,12 +58,13 @@ void PhoneBook::searchContact(void)
         return;
     }
 
-    cout << "\n|     Index|First Name| Last Name|" << endl;
+    cout << "\n|     Index|First Name| Last Name|  Nickname|" << endl;
     for (int i = 0; i < this->index; i++)
     {
         cout << "|" << std::right << std::setw(10) << i << "|";
         display(contacts[i].getFirstName());
         display(contacts[i].getLastName());
+        display(contacts[i].getNickname());
         cout << endl;
     }
 
@@ -81,6 +90,8 @@ void PhoneBook::searchContact(void)
     {
         cout << "\nFirst Name: " << contacts[to_search_index].getFirstName() << endl;
         cout << "Last Name: " << contacts[to_search_index].getLastName() << endl;
+        cout << "Nickname: " << contacts[to_search_index].getNickname() << endl;
         cout << "Phone Number: " << contacts[to_search_index].getPhoneNumber() << endl;
+        cout << "Darkest Secret: " << contacts[to_search_index].getDarkestSecret() << endl;
     }
 }

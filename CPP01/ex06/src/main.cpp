@@ -1,16 +1,15 @@
 #include "Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	std::string input;
 	Harl harl;
 
-	do {
-		cout << "\nLevels: DEBUG | INFO | WARNING | ERROR\n> ";
-		getline(std::cin, input);
-		harl.complain(input);
-
-	} while (!input.empty());
-
+	if (argc != 2 || !argv[1])
+	{
+		cerr << "Invalid arguments!" << '\n';
+		cout << "./harlFilter <level>\nlevels: DEBUG, INFO, WARNING, ERROR" << endl;
+		return EXIT_FAILURE;
+	}
+	harl.complain(argv[1]);	
 	return EXIT_SUCCESS;
 }

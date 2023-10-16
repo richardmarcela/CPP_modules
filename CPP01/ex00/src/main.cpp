@@ -4,6 +4,6 @@ int main(void) {
     Zombie *zombie = newZombie("junior");
     zombie->announce();
 
-    randomChump("RODRIGO");
-    delete zombie; 
+    randomChump("francisvaldo");
+    delete zombie;
 }
