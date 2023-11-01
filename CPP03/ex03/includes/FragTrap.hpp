@@ -4,7 +4,7 @@
 # include "ScavTrap.hpp"
 
 //avoidind the diamond problem 
-class FragTrap : public virtual ClapTrap 
+class FragTrap : virtual public ClapTrap 
 {
     public:
         FragTrap(void);

@@ -6,7 +6,8 @@
 int main(void)
 {
     DiamondTrap Junior("Junior");
-
+	Junior.whoAmI();
+/* 
 	cout << endl;
 
     DiamondTrap Leonice("Leonice");
@@ -28,6 +29,6 @@ int main(void)
 
 	Leonice.beRepaired(5);
 
-	cout << endl;
+	cout << endl; */
 
 }

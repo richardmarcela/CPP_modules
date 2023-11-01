@@ -3,7 +3,7 @@
 // Constructors
 ClapTrap::ClapTrap(void)
 {
-	this->name = name;
+	this->name = "";
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
